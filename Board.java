@@ -1,56 +1,56 @@
 package at.technikum;
 
 public class Board { 
-    private char[][] cells; // Deklariert ein zweidimensionales Array von chars, um das Spielfeld darzustellen
+    private char[][] cells; // Declares a two-dimensional array of chars to represent the game board
 
     public Board() { 
         cells = new char[3][3]; 
-        clear(); // Ruft die Methode "clear()" auf, um das Spielfeld zu leeren
+        clear(); // Calls the "clear()" method to clear the board
     }
 
-    public boolean isCellEmpty(int x, int y) { // Methode, die überprüft, ob eine bestimmte Zelle leer ist
-        return cells[x][y] == ' '; // Gibt true zurück, wenn die Zelle an der Position (x, y) ein Leerzeichen ist
+    public boolean isCellEmpty(int x, int y) { // Method to check if a specific cell is empty
+        return cells[x][y] == ' '; // Returns true if the cell at position (x, y) is a space
     }
 
-    public void place(int x, int y, char marker) { // Methode, die einen Marker (z.B. 'X' oder 'O') in eine Zelle setzt
-        if (isCellEmpty(x, y)) { // Überprüft, ob die Zelle leer ist
-            cells[x][y] = marker; // Setzt den Marker in die Zelle, wenn sie leer ist
+    public void place(int x, int y, char marker) { // Method to place a marker (e.g., 'X' or 'O') in a cell
+        if (isCellEmpty(x, y)) { // Checks if the cell is empty
+            cells[x][y] = marker; // Places the marker in the cell if it is empty
         }
     }
 
-    public boolean isFull() { // Methode, die überprüft, ob das Spielfeld voll ist
+    public boolean isFull() { // Method to check if the board is full
         for (int i = 0; i < 3; i++) { 
             for (int j = 0; j < 3; j++) { 
-                if (cells[i][j] == ' ') { // Überprüft, ob die Zelle leer ist
-                    return false; // Gibt false zurück, wenn eine leere Zelle gefunden wird
+                if (cells[i][j] == ' ') { // Checks if the cell is empty
+                    return false; // Returns false if an empty cell is found
                 }
             }
         }
-        return true; // Gibt true zurück, wenn keine leere Zelle gefunden wird
+        return true; // Returns true if no empty cell is found
     }
 
-    public void clear() { // Methode, die das Spielfeld leert
+    public void clear() { // Method to clear the board
         for (int i = 0; i < 3; i++) { 
             for (int j = 0; j < 3; j++) { 
-                cells[i][j] = ' '; // Setzt jede Zelle auf ein Leerzeichen
+                cells[i][j] = ' '; // Sets each cell to a space
             }
         }
     }
 
-    public void print() { // Methode, die das Spielfeld ausdruckt
-        System.out.println("▁▁▁▁▁▁▁"); // Druckt eine obere Rahmenlinie
+    public void print() { // Method to print the board
+        System.out.println("▁▁▁▁▁▁▁"); // Prints a top border line
         for (int i = 0; i < 3; i++) { 
-            System.out.print("|"); // Druckt eine linke Rahmenlinie
+            System.out.print("|"); // Prints a left border line
             for (int j = 0; j < 3; j++) { 
-                System.out.print(cells[i][j] == ' ' ? " " : cells[i][j]); // Druckt das Zellenzeichen oder ein Leerzeichen
-                System.out.print("|"); // Druckt eine vertikale Trennlinie zwischen den Zellen
+                System.out.print(cells[i][j] == ' ' ? " " : cells[i][j]); // Prints the cell character or a space
+                System.out.print("|"); // Prints a vertical separator between cells
             }
-            System.out.println(); // Zeilenumbruch nach jeder Zeile
+            System.out.println(); // Line break after each row
         }
-        System.out.println("▔▔▔▔▔▔▔"); // Druckt eine untere Rahmenlinie
+        System.out.println("▔▔▔▔▔▔▔"); // Prints a bottom border line
     }
 
-    public char[][] getCells() { // Methode, die das Spielfeld zurückgibt
-        return cells; // Gibt das Array "cells" zurück
+    public char[][] getCells() { // Method to return the board
+        return cells; // Returns the array "cells"
     }
 }
