@@ -55,7 +55,7 @@ public class TicTacToe {
         char[][] cells = board.getCells(); 
         for (int i = 0; i < 3; i++) { // Loop that checks each row and column
             // Checks if a row or column has the same marker
-            if ((cells[i][0] == currentPlayer.getMarker() && cells[i][1] == currentPlayer.getMarker() && cells[i][2] == currentPlayer.getMarker()) ||
+            if ((cells[i][1] == currentPlayer.getMarker() && cells[i][1] == currentPlayer.getMarker() && cells[i][2] == currentPlayer.getMarker()) ||
                 (cells[0][i] == currentPlayer.getMarker() && cells[1][i] == currentPlayer.getMarker() && cells[2][i] == currentPlayer.getMarker())) {
                 return true; // Returns true if there is a winner
             }
